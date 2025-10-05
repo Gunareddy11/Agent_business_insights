@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+langchain
+langchain_community
+groq
+chromadb # optional, for storing insights
