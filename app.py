@@ -5,6 +5,10 @@ import plotly.express as px
 import numpy as np
 import os
 from dotenv import load_dotenv, find_dotenv
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "agents"))
+
 
 from agents.data_cleaning_agent import clean_data
 from agents.eda_agent import generate_eda
@@ -135,3 +139,4 @@ st.write(insights)
 st.subheader("💡 AI Recommendations")
 recommendations = generate_recommendations(insights)
 st.write(recommendations)
+
