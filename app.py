@@ -8,6 +8,14 @@ from dotenv import load_dotenv, find_dotenv
 
 
 
+st.write("Current working directory:", os.getcwd())
+st.write("Files in root:", os.listdir())
+st.write("Agents folder exists:", os.path.exists("agents"))
+st.write("Files in agents:", os.listdir("agents") if os.path.exists("agents") else "N/A")
+
+
+
+
 from agents.data_cleaning_agent import clean_data
 from agents.eda_agent import generate_eda
 from agents.insights_agent import generate_insights
@@ -137,6 +145,7 @@ st.write(insights)
 st.subheader("💡 AI Recommendations")
 recommendations = generate_recommendations(insights)
 st.write(recommendations)
+
 
 
 
