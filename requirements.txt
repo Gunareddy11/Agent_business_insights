@@ -7,4 +7,6 @@ plotly
 langchain
 langchain_community
 groq
+python-dotenv
 chromadb # optional, for storing insights
+
