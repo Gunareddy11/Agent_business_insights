@@ -4,16 +4,18 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 import os
-from dotenv import load_dotenv, find_dotenv
 
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    st.error("Groq API key not found! Please add it to Streamlit Secrets.")
 
 from agents.data_cleaning_agent import clean_data
 from agents.eda_agent import generate_eda
 from agents.insights_agent import generate_insights
 from agents.recommendation_agent import generate_recommendations
 
-# Load environment variables
-_ = load_dotenv(find_dotenv())
+
 
 st.set_page_config(page_title="AI Business Insights Agent", layout="wide")
 st.title("📊 AI Business Insights Dashboard")
@@ -136,6 +138,7 @@ st.write(insights)
 st.subheader("💡 AI Recommendations")
 recommendations = generate_recommendations(insights)
 st.write(recommendations)
+
 
 
 
